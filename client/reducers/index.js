@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 // IMPORT ALL REDUCERS HERE
-import songsReducer from './songsReducer';
+import tracksReducer from './songsReducer';
 
 // COMBINE REDUCERS
 const reducers = combineReducers({
-  songs: songsReducer,
+  track: tracksReducer,
 });
 
 export default reducers;
