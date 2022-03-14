@@ -7,26 +7,25 @@ module.exports={
     './client/index.js'
   ],
   output: {
-    path: path.resolve(__dirname, '/dist/'),
-    publicPath: '/dist/',
     filename: 'bundle.js',
+    path: path.resolve(__dirname, '/dist/'),
+    publicPath: '/',
   },
   devtool: 'eval-source-map',
   module: {
     rules: [
-      {
+      {  // BABEL LOADER FOR .JS AND .JSX FILE
         test: /.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         }
       },
-      {
+      {  // STATIC ASSETS LOADERS FOR PAGE STYLING
         test: /.(css|scss)$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         // THIS CAN BE EXPRESSED AS A SIMPLE ARRAY OF STRINGS -- NOTE THE MODULAR SYNTAX
       //   use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-      // }
         use: [{
           loader: 'style-loader', // INJECTS CSS TO PAGE
         }, {
@@ -69,5 +68,4 @@ module.exports={
       template: './client/index.html',
     })
   ]
-
 };

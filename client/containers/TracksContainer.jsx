@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
     actions.addTrackActionCreator(artist.target.attributes.id.value),
     actions.addTrackActionCreator(track.target.attributes.id.value)
   ),
-  deleteSong: (track) => dispatch(actions.deleteSongActionCreator(track)),
+  deleteSong: (track) => dispatch(actions.deleteTrackActionCreator(track)),
 })
 
 class TracksContainer extends Component {
