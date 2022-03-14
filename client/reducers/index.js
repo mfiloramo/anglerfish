@@ -5,7 +5,7 @@ import tracksReducer from './songsReducer';
 
 // COMBINE REDUCERS
 const reducers = combineReducers({
-  track: tracksReducer,
+  tracks: tracksReducer,
 });
 
 export default reducers;
