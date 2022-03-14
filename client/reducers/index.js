@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import '../stylesheets/styles.css'
 
 // IMPORT ALL REDUCERS HERE
 import tracksReducer from './songsReducer';
@@ -7,5 +8,6 @@ import tracksReducer from './songsReducer';
 const reducers = combineReducers({
   tracks: tracksReducer,
 });
+
 
 export default reducers;

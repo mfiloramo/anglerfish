@@ -22,3 +22,5 @@ export const seekTrackActionCreator = song => ({
   type: types.SEEK_TRACK,
   payload: song,
 })
+
+// TODO: VERIFY THAT ACTION CREATORS ARE OPERATIONAL

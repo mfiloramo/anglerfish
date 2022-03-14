@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import TracksContainer from "./TracksContainer";
 
 const mapStateToProps = state => ({
-  // MAP STATE TO PROPS HERE. WHAT ARE THE MAIN CONTAINER'S PROPS?
+  // TODO: MAP STATE TO PROPS HERE.
+  totalTracks: state.tracks.totalTracks,
 });
 
 class MainContainer extends Component {
@@ -14,8 +15,8 @@ class MainContainer extends Component {
           <h1 id={'header'}>
             AnglerFish Music Player
           </h1>
-          <TracksContainer />
-          {/* ADD PLAYBACKCONTROLS COMPONENT HERE */}
+          {/* TODO: PLACE TRACKS CONTAINER COMPONENT HERE// */}
+          {/* TODO: PLACE PLAYBACK CONTROL COMPONENT HERE// */}
         </div>
       </div>
     );

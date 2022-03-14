@@ -21,8 +21,8 @@ class TracksContainer extends Component {
     const { addTrack, deleteTrack, trackList, totalTracks } = this.props;
 
     return (
-      <div className={'innerbox'}>
-      {/* ADD TRACKCREATOR HERE */}
+      <div className={'innerbox'} style={{ marginLeft: '40%', marginTop: '60px', width: '30%' }}>
+      {/* TODO: ADD SONG COMPONENT HERE */}
       </div>
     );
   }
