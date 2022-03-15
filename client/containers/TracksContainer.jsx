@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// IMPORT SONG CREATER THAT WILL QUERY FOR SONGS
+// TODO: IMPORT SONG CREATOR THAT WILL QUERY FOR SONGS
 import * as actions from '../actions/actions';
 
 const mapStateToProps = state => ({

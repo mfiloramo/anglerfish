@@ -6,6 +6,10 @@ html {
     background: #004878;
 }
 
+#playInterface {
+    /*bottom: 0;*/
+}
+
 .outerBox {
     color: white;
     background-color: #00005e;

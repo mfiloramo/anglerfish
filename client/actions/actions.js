@@ -10,6 +10,11 @@ export const deleteTrackActionCreator = song => ({
   payload: song,
 })
 
+export const playTrackActionCreator = song => ({
+  type: types.PLAY_TRACK,
+  payload: song,
+})
+
 export const pauseTrackActionCreator = song => ({
   type: types.PAUSE_TRACK,
   payload: song,

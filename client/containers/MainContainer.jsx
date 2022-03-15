@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TracksContainer from "./TracksContainer";
+import PlaybackInterface from "../components/PlaybackInterface";
 
 const mapStateToProps = state => ({
   // TODO: MAP STATE TO PROPS HERE.
@@ -18,7 +19,7 @@ class MainContainer extends Component {
           </h3>
           <TracksContainer />
           {/* TODO: PLACE TRACKS CONTAINER COMPONENT HERE// */}
-          {/* TODO: PLACE PLAYBACK CONTROL COMPONENT HERE// */}
+          <PlaybackInterface />
         </div>
       </div>
     );
