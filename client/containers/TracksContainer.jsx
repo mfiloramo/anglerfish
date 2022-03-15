@@ -21,11 +21,13 @@ class TracksContainer extends Component {
     const { addTrack, deleteTrack, trackList, totalTracks } = this.props;
 
     return (
-      <div className={'innerbox'} style={{ marginLeft: '40%', marginTop: '60px', width: '30%' }}>
+      <div className={'innerbox'}>
+        <h4 id={"test"}>This is the TracksContainer component</h4>
       {/* TODO: ADD SONG COMPONENT HERE */}
       </div>
     );
   }
 }
 
-export default connect((mapStateToProps, mapDispatchToProps)(TracksContainer));
+export default TracksContainer;
+// export default connect((mapStateToProps, mapDispatchToProps)(TracksContainer));

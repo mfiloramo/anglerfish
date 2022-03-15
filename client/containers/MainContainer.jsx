@@ -5,16 +5,18 @@ import TracksContainer from "./TracksContainer";
 const mapStateToProps = state => ({
   // TODO: MAP STATE TO PROPS HERE.
   totalTracks: state.tracks.totalTracks,
+  tracksList: state.tracks.tracksList,
 });
 
 class MainContainer extends Component {
   render() {
     return (
       <div className={'container'}>
-        <div className={'outerbox'}>
-          <h1 id={'header'}>
+        <div className={'outerBox'}>
+          <h3 id={'header'}>
             AnglerFish Music Player
-          </h1>
+          </h3>
+          <TracksContainer />
           {/* TODO: PLACE TRACKS CONTAINER COMPONENT HERE// */}
           {/* TODO: PLACE PLAYBACK CONTROL COMPONENT HERE// */}
         </div>
@@ -23,4 +25,5 @@ class MainContainer extends Component {
   }
 }
 
-export default connect(mapStateToProps, null)(MainContainer);
+// export default connect(mapStateToProps, null)(MainContainer);
+export default MainContainer;
