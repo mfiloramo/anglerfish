@@ -1,18 +1,24 @@
 html {
-    background-color: #004878;
+    background-color: #002236;
+}
+
+tr {
+    background-color: #ff0000;
+    border: white;
+    border-radius: 10px;
 }
 
 #root {
-    background: #004878;
+    background-color: #002236;
 }
 
 #playInterface {
-    /*bottom: 0;*/
+    text-align: center;
 }
 
 .outerBox {
     color: white;
-    background-color: #00005e;
+    background-color: #000021;
     margin: 20px;
     height: 500px;
     padding-top: 10px;

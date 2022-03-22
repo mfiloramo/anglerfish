@@ -25,7 +25,7 @@ module.exports = {
         }
       },
       {  // STATIC ASSETS LOADERS FOR PAGE STYLING
-        test: /.(css|scss)$/,
+        test: /\.(css|scss)$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
         // THIS CAN ALSO BE EXPRESSED USING MODULAR SYNTAX -- SEE BELOW
         //     use: [{

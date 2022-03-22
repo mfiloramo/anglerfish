@@ -23,7 +23,9 @@ class TracksContainer extends Component {
     return (
       <div className={'innerbox'}>
         <h4 id={"test"}>This is the TracksContainer component</h4>
-      {/* TODO: ADD SONG COMPONENT HERE */}
+        <tr>Song Row 1</tr>
+        <tr>Song 2</tr>
+        <tr>Song 3</tr>
       </div>
     );
   }
