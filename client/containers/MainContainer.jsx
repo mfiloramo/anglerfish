@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import TracksContainer from "./TracksContainer";
 import PlaybackInterface from "../components/PlaybackInterface";
-
-const mapStateToProps = state => ({
-  // TODO: MAP STATE TO PROPS HERE.
-  totalTracks: state.tracks.totalTracks,
-  tracksList: state.tracks.tracksList,
-});
 
 class MainContainer extends Component {
   render() {
@@ -25,5 +18,4 @@ class MainContainer extends Component {
   }
 }
 
-// export default connect(mapStateToProps, null)(MainContainer);
 export default MainContainer;

@@ -24,20 +24,9 @@ module.exports = {
           loader: 'babel-loader',
         }
       },
-      {  // STATIC ASSETS LOADERS FOR PAGE STYLING
-        test: /\.(css|scss)$/,
+      {
+        test: /\.(css|scss|sass)$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-        // THIS CAN ALSO BE EXPRESSED USING MODULAR SYNTAX -- SEE BELOW
-        //     use: [{
-        //       loader: 'style-loader', // INJECTS CSS TO PAGE
-        //     }, {
-        //       loader: 'css-loader', // TRANSLATES CSS INTO CommonJS MODULES
-        //     }, {
-        //       loader: 'postcss-loader', // RUN POST CSS ACTIONS
-        //     }, {
-        //       loader: 'sass-loader', // COMPILE SASS TO CSS
-        //     }]
-        //   },
       }
     ]
   },
@@ -46,7 +35,7 @@ module.exports = {
 
   devServer: {
     host: 'localhost',
-    port: 8083,
+    port: 8084,
     static: {
       directory: path.resolve(__dirname, 'dist'),
       publicPath: '/',
@@ -54,16 +43,16 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    proxy: {
-      '/api/**': {
-        target: 'http://localhost:3002',
-        secure: false,
-      },
-      '/assets/**': {
-        target: 'http://localhost:3002',
-        secure: false,
-      }
-    }
+    // proxy: {
+    //   '/api/**': {
+    //     target: 'http://localhost:3002',
+    //     secure: false,
+    //   },
+    //   '/assets/**': {
+    //     target: 'http://localhost:3002',
+    //     secure: false,
+    //   }
+    // }
   },
 
   resolve: {

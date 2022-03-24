@@ -1,8 +1,0 @@
-/** ACTION TYPES FOR ANGLERFISH CLIENT INTERFACE */
-
-export const ADD_TRACK = 'ADD_TRACK';
-export const DELETE_TRACK = 'DELETE_TRACK';
-export const PLAY_TRACK = 'PLAY_TRACK';
-export const PAUSE_TRACK = 'PAUSE_TRACK';
-export const SEEK_TRACK = 'SEEK_TRACK';
-export const PREV_TRACK = 'PREV_TRACK';
