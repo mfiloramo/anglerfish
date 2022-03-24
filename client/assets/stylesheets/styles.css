@@ -1,42 +1,44 @@
-html {
-    background-color: #002236;
+/*html {*/
+/*    background-color: #002236;*/
+/*}*/
+body {
+    background-color: orangered;
 }
+/*tr {*/
+/*    background-color: #ff0000;*/
+/*    border: white;*/
+/*    border-radius: 10px;*/
+/*}*/
 
-tr {
-    background-color: #ff0000;
-    border: white;
-    border-radius: 10px;
-}
+/*#root {*/
+/*    background-color: #002236;*/
+/*}*/
 
-#root {
-    background-color: #002236;
-}
+/*#playInterface {*/
+/*    text-align: center;*/
+/*}*/
 
-#playInterface {
-    text-align: center;
-}
+/*.outerBox {*/
+/*    color: white;*/
+/*    background-color: #000021;*/
+/*    margin: 20px;*/
+/*    height: 500px;*/
+/*    padding-top: 10px;*/
+/*    border-style: solid;*/
+/*    box-shadow: 7px 10px 10px rgba(0, 0, 0, .5);*/
+/*    border-radius: 15px;*/
+/*    border-color: black;*/
+/*}*/
 
-.outerBox {
-    color: white;
-    background-color: #000021;
-    margin: 20px;
-    height: 500px;
-    padding-top: 10px;
-    border-style: solid;
-    box-shadow: 7px 10px 10px rgba(0, 0, 0, .5);
-    border-radius: 15px;
-    border-color: black;
-}
+/*.innerBox {*/
+/*!* BUILD innerBox FORMATTING HERE *!*/
+/*}*/
 
-.innerBox {
-/* BUILD innerBox FORMATTING HERE */
-}
+/*#header {*/
+/*    text-align: center;*/
+/*}*/
 
-#header {
-    text-align: center;
-}
-
-#test {
-    text-align: center;
-    color: orangered;
-}
+/*#test {*/
+/*    text-align: center;*/
+/*    color: orangered;*/
+/*}*/
