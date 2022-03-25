@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3009;
 
 /** REQUIRE ROUTERS */
-// WIRE ROUTERS HERE
+const apiRouter = require(path.resolve(__dirname, './routes/api.js'));
 
 /** HANDLE PARSING REQUEST BODY */
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, '../client/stylesheets/styles.css')));
 
 /** DEFINE ROUTE HANDLERS */
-// BUILD ROUTE HANDLERS HERE
+app.use('/api', apiRouter);
 
 /** ROUTE HANDLER TO RESPOND WITH MAIN APP */
 app.get('/', (request, response) => {

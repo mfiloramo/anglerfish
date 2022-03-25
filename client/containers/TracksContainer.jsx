@@ -13,6 +13,8 @@ class TracksContainer extends Component {
     this.deleteSong = this.deleteSong.bind(this);
   };
 
+  // ADD FUNCTION THAT MAKES FETCH REQUESTS TO /API ENDPOINT TO FETCH VIDEO
+
   addSong = e => {
     if (e.keyCode === 13) {
       const newState = this.state.songs;

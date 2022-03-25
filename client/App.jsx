@@ -12,6 +12,4 @@ class App extends Component {
   }
 }
 
-// TODO: BUILD MAIN APP HERE
-
 export default App;
