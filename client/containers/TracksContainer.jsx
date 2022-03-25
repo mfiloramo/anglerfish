@@ -9,22 +9,36 @@ class TracksContainer extends Component {
     super(props);
     this.state = { songs: [] }
 
-    this.addSong = this.addSong.bind(this);
+    this.fetchVideo = this.fetchVideo.bind(this);
     this.deleteSong = this.deleteSong.bind(this);
   };
 
-  // ADD FUNCTION THAT MAKES FETCH REQUESTS TO /API ENDPOINT TO FETCH VIDEO
-
-  addSong = e => {
-    if (e.keyCode === 13) {
+  fetchVideo = (song) => {
+    if (song.keyCode === 13) {
+      let video;
       const newState = this.state.songs;
-      newState.push(
-        <div className={'song'} key={key++}>This is a new song. It is by {e.target.value}</div>,
-    );
-      this.setState({ songs: newState });
-      console.log('Song added!');
-    }
+
+      fetch('/api/')
+        .then(res => video = res.locals.video)
+        .then(console.log(video))
+        .then(res => {
+          newState.push(
+            <div className={'song'} key={key++} width="200" height="200" src={video}>hello</div>
+          )
+          return this.setState({ songs: newState });
+        })
+        .catch(err => console.log(`Error with fetchVideo client request: ${err}`))
+      }
   };
+
+  // addSong = e => {
+  //   const newState = this.state.songs;
+  //   newState.push(
+  //     <div className={'song'} key={key++}>This is a new song. It is by {e.target.value}</div>,
+  // );
+  //   this.setState({ songs: newState });
+  //   console.log('Song added!');
+  // };
 
   deleteSong = () => {
       const newState = this.state.songs;
@@ -38,16 +52,20 @@ class TracksContainer extends Component {
       <div className={'innerBox'}>
 
         <button className={'button'} type={'button'} onClick={this.deleteSong}>Delete Song</button>
-          <br />
-        <label htmlFor={'artist'}>Artist: </label>
-        <input type={'text'} name={'artist'} onKeyDown={this.addSong} />
-          <br />
-        <label htmlFor={'song'}>Song: </label>
-        <input type={'text'} name={'song'} onKeyDown={this.addSong} />
 
-        <div>
-          {this.state.songs}
-        </div>
+        <br />
+
+        <label htmlFor={'artist'}>Artist: </label>
+        <input type={'text'} name={'artist'} onKeyDown={this.fetchVideo} />
+
+        <br />
+
+        <label htmlFor={'song'}>Song: </label>
+        <input type={'text'} name={'song'} onKeyDown={this.fetchVideo} />
+
+        <div>{this.state.songs}</div>
+
+
 
       </div>
     );
