@@ -11,10 +11,10 @@ const PORT = 3009;
 app.use(express.json());
 
 /** HANDLE REQUESTS FOR STATIC FILES */
-app.use(express.static('./client/assets/', path.resolve(__dirname, './client/assets/')));
+app.use(express.static(path.resolve(__dirname, '../client/stylesheets/styles.css')));
 
 /** DEFINE ROUTE HANDLERS */
-
+// BUILD ROUTE HANDLERS HERE
 
 /** ROUTE HANDLER TO RESPOND WITH MAIN APP */
 app.get('/', (request, response) => {

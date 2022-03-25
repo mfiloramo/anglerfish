@@ -12,9 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
-
   devtool: 'eval-source-map',
-
   module: {
     rules: [
       {
@@ -30,9 +28,7 @@ module.exports = {
       }
     ]
   },
-
   mode: 'development',
-
   devServer: {
     host: 'localhost',
     port: 8084,
@@ -43,16 +39,16 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    // proxy: {
-    //   '/api/**': {
-    //     target: 'http://localhost:3002',
-    //     secure: false,
-    //   },
-    //   '/assets/**': {
-    //     target: 'http://localhost:3002',
-    //     secure: false,
-    //   }
-    // }
+    proxy: {
+      '/api/**': {
+        target: 'http://localhost:3009',
+        secure: false,
+      },
+      '/client/stylesheets/**': {
+        target: 'http://localhost:3009',
+        secure: false,
+      }
+    }
   },
 
   resolve: {
