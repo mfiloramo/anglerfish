@@ -11,7 +11,9 @@ class MainContainer extends Component {
             AnglerFish Music Player
           </h3>
           <TracksContainer />
-          <PlaybackInterface />
+          <div className={'pbinterface'}>
+            <PlaybackInterface />
+          </div>
         </div>
       </div>
     );

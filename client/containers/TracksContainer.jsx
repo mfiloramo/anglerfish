@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// TODO: IMPORT SONG CREATOR THAT WILL QUERY FOR SONGS
 
 // USE AND INCREMENT A NUMBER TO ASSIGN UNIQUE KEY IDS TO COMPONENTS
 let key = 0;
@@ -7,7 +6,9 @@ let key = 0;
 class TracksContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { songs: [] }
+    this.state = {
+      songs: [],
+    }
 
     this.fetchVideo = this.fetchVideo.bind(this);
     this.deleteSong = this.deleteSong.bind(this);
@@ -18,26 +19,30 @@ class TracksContainer extends Component {
       let video;
       const newState = this.state.songs;
 
-      fetch('/api/')
-        .then(res => video = res.locals.video)
-        .then(console.log(video))
-        .then(res => {
-          newState.push(
-            <div className={'song'} key={key++} width="200" height="200" src={video}>hello</div>
-          )
-          return this.setState({ songs: newState });
-        })
+      fetch('/api/', {
+        method: 'POST',
+      })
+        .then(res => res.text())
+        .then(res => console.log(res))
+          // newState.push(
+          //   <iframe className={'song'} key={key++} width="200" height="200" src={res.locals.video}>TESTING</iframe>
+          // )
+          // return this.setState({ songs: newState });
+        // })
         .catch(err => console.log(`Error with fetchVideo client request: ${err}`))
       }
   };
 
   // addSong = e => {
-  //   const newState = this.state.songs;
-  //   newState.push(
-  //     <div className={'song'} key={key++}>This is a new song. It is by {e.target.value}</div>,
-  // );
-  //   this.setState({ songs: newState });
-  //   console.log('Song added!');
+  //   if (e.keyCode === 13) {
+  //     console.log('Song Added')
+  //     const newState = this.state.songs;
+  //     newState.push(
+  //       <div className={'song'} key={key++}>This is a new song. It is by {e.target.value}</div>,
+  //     );
+  //     this.setState({ songs: newState });
+  //     console.log('Song Added')
+  //   }
   // };
 
   deleteSong = () => {
@@ -50,23 +55,16 @@ class TracksContainer extends Component {
   render() {
     return (
       <div className={'innerBox'}>
-
         <button className={'button'} type={'button'} onClick={this.deleteSong}>Delete Song</button>
-
-        <br />
-
+          <br />
         <label htmlFor={'artist'}>Artist: </label>
-        <input type={'text'} name={'artist'} onKeyDown={this.fetchVideo} />
-
-        <br />
-
+        <input className={'input'} type={'text'} name={'input'} onKeyDown={this.fetchVideo} />
+          <br />
         <label htmlFor={'song'}>Song: </label>
-        <input type={'text'} name={'song'} onKeyDown={this.fetchVideo} />
-
-        <div>{this.state.songs}</div>
-
-
-
+        <input className={'input'} type={'text'} name={'song'} onKeyDown={this.fetchVideo} />
+        <div>
+          {this.state.songs}
+        </div>
       </div>
     );
   }

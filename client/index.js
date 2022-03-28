@@ -6,7 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 render(
   <BrowserRouter>
-      <App />,
+    <App />,
   </BrowserRouter>,
   document.getElementById('root'),
 );

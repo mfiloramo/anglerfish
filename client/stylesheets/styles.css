@@ -27,6 +27,14 @@ html {
 /* BUILD innerBox FORMATTING HERE */
 }
 
+.input {
+    border-radius: 20px;
+}
+
+.pbinterface {
+
+}
+
 .song {
     background-image: linear-gradient(#ff4c00, #932200);
     border-radius: 15px;

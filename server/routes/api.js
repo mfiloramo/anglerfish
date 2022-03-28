@@ -4,10 +4,11 @@ const controller = require('../controllers/controller');
 const router = express.Router();
 
 /** ADD STARTER DATA REQUEST ROUTE HANDLER HERE */
-router.get('/', controller.fetchVideo,
+router.post('/', controller.fetchVideoId,
   (request, response) => {
-  return response.status(200).json(response.locals);
+  // let video = request.body.video;
+  return response.locals.video;
+  // return response.status(200).json({ error: null, data: video });
 });
 
-
-// TODO: FIND A WAY TO CONVERT YOUTUBE VIDEO SOUND TO AUDIO
+module.exports = router;

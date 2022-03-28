@@ -6,7 +6,6 @@ module.exports = {
   entry: [
     '/client/index.js'
   ],
-
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -41,20 +40,18 @@ module.exports = {
     headers: { 'Access-Control-Allow-Origin': '*' },
     proxy: {
       '/api/**': {
-        target: 'http://localhost:3009',
+        target: 'http://localhost:3010',
         secure: false,
       },
       '/client/stylesheets/**': {
-        target: 'http://localhost:3009',
+        target: 'http://localhost:3010',
         secure: false,
       }
     }
   },
-
   resolve: {
     extensions: ['.js', '.jsx']
   },
-
   plugins: [
     new HtmlWebpackPlugin({
       template: './client/index.html',
