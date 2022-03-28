@@ -8,10 +8,12 @@ const controller = {};
 
 /** MIDDLEWARE THAT FETCHES VIDEOS FROM THE YOUTUBE API */
 controller.fetchVideoId = async (request, response, next) => {
+  const videoQuery = request.body.video;
+
   await google.youtube('v3').search.list({
     key: 'AIzaSyDhNUaCmoSST9i0XFyoLX69YIoDQGgZcKk',
     part: 'snippet',
-    q: 'zero 7 destiny',
+    q: videoQuery, // THIS IS WHERE WE PASS USER INPUT FROM THE FRONTEND
     maxResults: 1,
   })
     .then(res => {
@@ -22,11 +24,6 @@ controller.fetchVideoId = async (request, response, next) => {
   })
     .catch(err => console.log(err))
 };
-
-// controller.embedVideo = async (request, response, next) => {
-//
-// }
-
 
 
 module.exports = controller;

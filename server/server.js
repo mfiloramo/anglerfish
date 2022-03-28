@@ -9,6 +9,8 @@ const apiRouter = require(path.resolve(__dirname, './routes/api.js'));
 
 /** HANDLE PARSING REQUEST BODY */
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 /** HANDLE REQUESTS FOR STATIC FILES */
 app.use(express.static(path.resolve(__dirname, '../client/stylesheets/styles.css')));

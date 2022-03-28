@@ -18,32 +18,26 @@ class TracksContainer extends Component {
     if (song.keyCode === 13) {
       let video;
       const newState = this.state.songs;
+      console.log(JSON.stringify(song.target.value));
 
-      fetch('/api/', {
+      fetch('/api', {
         method: 'POST',
+        body: JSON.stringify({'video': song.target.value }),
+        headers: {
+          "Content-Type": "Application/JSON",
+        },
       })
         .then(res => res.text())
-        .then(res => console.log(res))
-          // newState.push(
-          //   <iframe className={'song'} key={key++} width="200" height="200" src={res.locals.video}>TESTING</iframe>
-          // )
-          // return this.setState({ songs: newState });
-        // })
+        .then(res => {
+          newState.push(
+            <iframe className='song' key={key++} width="200" height="200" src={res} />
+          )
+          return this.setState({songs: newState})
+        })
+
         .catch(err => console.log(`Error with fetchVideo client request: ${err}`))
       }
   };
-
-  // addSong = e => {
-  //   if (e.keyCode === 13) {
-  //     console.log('Song Added')
-  //     const newState = this.state.songs;
-  //     newState.push(
-  //       <div className={'song'} key={key++}>This is a new song. It is by {e.target.value}</div>,
-  //     );
-  //     this.setState({ songs: newState });
-  //     console.log('Song Added')
-  //   }
-  // };
 
   deleteSong = () => {
       const newState = this.state.songs;
